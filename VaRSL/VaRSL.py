@@ -19,8 +19,28 @@ from sklearn.linear_model import LinearRegression
 import seaborn as sns; sns.set()
 import openpyxl 
 
+from tkinter import ttk
+from tkinter import filedialog
+from ttkthemes import ThemedTk
+
+
  #Prevents Errors when reading a file
 #pre = os.path.dirname(os.path.realpath(__file__))
+
+# Create the main application window
+#root = tk.Tk()
+# Use a themed style
+#style = ttk.Style()
+#style.theme_use("clam")  # You can choose a different theme like "clam", "winnative", etc.
+# Create a canvas
+#canvas1 = tk.Canvas(root)
+#canvas1.pack()
+# Open file dialog
+#import_file_path = filedialog.askopenfilename()
+# Read Excel file
+#df = pd.read_excel(import_file_path, engine='openpyxl')
+# Run the main loop
+#root.mainloop()
 
 # GUI calling CSV file
 root = tk.Tk()  # Allows for GUIs to be created & manipulated
@@ -75,6 +95,8 @@ y = y.flatten()  # Flattens y so program can do calculations w/ it
 print('Here are the magnitudes for each star! \n')  # Tells user what's being shown
 print("The Instrumental Magnitudes: \n", x, "\n")  # Presents instrumental mags from raw data
 print("The magnitudes from VizieR: \n", y)  # Presents mags user looked up for reference on Vizie
+
+#___________________________________________________________________________________________________
 
 # First runthrough of Linear Regression of Data:
 x = np.array(x).reshape((-1, 1))  # Reshapes array to be used for calculations... making this new x
